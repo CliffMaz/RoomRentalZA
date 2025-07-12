@@ -4,6 +4,8 @@ const rentalData = [
     {
       id: 1,
       type: "Room",
+      availability:true,
+      location:"Krugersdorp",
       room_dimensions:'1350m x 900m',
       price: 1250,
       parking: true,
@@ -13,21 +15,21 @@ const rentalData = [
       images:[
          {
         id: 1,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:2,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     },
     {
         id: 3,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:4,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     }
       ],
       coord:{
@@ -38,6 +40,8 @@ const rentalData = [
     {
       id: 2,
       type: "Cottage",
+      availability:true,
+      location:"Krugersdorp",
       room_dimensions:'1350m x 900m',
       price: 1250,
       parking: true,
@@ -47,21 +51,21 @@ const rentalData = [
       images:[
          {
         id: 1,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:2,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     },
     {
         id: 3,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:4,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     }
       ],
       coord:{
@@ -72,6 +76,8 @@ const rentalData = [
     {
       id: 3,
       type: "Cottage",
+      availability:true,
+      location:"Krugersdorp",
       room_dimensions:'1350m x 900m',
       price: 3050,
       parking: true,
@@ -81,21 +87,21 @@ const rentalData = [
       images:[
          {
         id: 1,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:2,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     },
     {
         id: 3,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:4,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     }
       ],
       coord:{
@@ -106,6 +112,8 @@ const rentalData = [
     {
       id: 4,
       type: "Room",
+      availability:true,
+      location:"Krugersdorp",
       room_dimensions:'1350m x 900m',
       price: 950,
       parking: true,
@@ -115,21 +123,21 @@ const rentalData = [
       images:[
          {
         id: 1,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:2,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     },
     {
         id: 3,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:4,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     }
       ],
       coord:{
@@ -140,6 +148,8 @@ const rentalData = [
     {
       id: 5,
       type: "Room",
+      availability:true,
+      location:"Krugersdorp",
       room_dimensions:'1350m x 900m',
       price: 1250,
       parking: true,
@@ -149,21 +159,21 @@ const rentalData = [
       images:[
          {
         id: 1,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:2,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     },
     {
         id: 3,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:4,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     }
       ],
       coord:{
@@ -174,6 +184,8 @@ const rentalData = [
     {
       id: 6,
       type: "Cottage",
+      availability:true,
+      location:"Krugersdorp",
       room_dimensions:'1350m x 900m',
       price: 3250,
       parking: true,
@@ -183,21 +195,21 @@ const rentalData = [
       images:[
          {
         id: 1,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:2,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     },
     {
         id: 3,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:4,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     }
       ],
       coord:{
@@ -208,6 +220,8 @@ const rentalData = [
     {
       id: 7,
       type: "Room",
+      availability:true,
+      location:"Krugersdorp",
       room_dimensions:'1350m x 900m',
       price: 1750,
       parking: true,
@@ -217,21 +231,21 @@ const rentalData = [
       images:[
          {
         id: 1,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:2,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     },
     {
         id: 3,
-        pic: require('../../assets/homescreen.png'),
+        pic: require('./homescreen.png'),
     },
 
     {
         id:4,
-        pic: require('../../assets/hous.jpg')
+        pic: require('./hous.jpg')
     }
       ],
       coord:{
@@ -240,3 +254,5 @@ const rentalData = [
       }
     },
   ];
+
+  export default rentalData

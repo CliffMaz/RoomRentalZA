@@ -18,6 +18,7 @@ import styles from "./styles";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Feather from "react-native-vector-icons/Feather";
 import PostCard from "./postcard";
+import rentalData from "../../assets/Database";
 
 const MainScreen = ({ navigation }) => {
   const [open, setOpen] = useState(false);
@@ -140,14 +141,15 @@ const MainScreen = ({ navigation }) => {
       <View style={styles.roomBody}>
         <ScrollView style={{ flex: 1, marginTop: 25, width: "100%" }}>
           <View style={styles.cardView}>
-            <PostCard press={() => navigation.push("CardScreen")} />
-            <PostCard press={() => navigation.push("CardScreen")} />
-            <PostCard press={() => navigation.push("CardScreen")} />
-            <PostCard press={() => navigation.push("CardScreen")} />
-            <PostCard press={() => navigation.push("CardScreen")} />
-            <PostCard press={() => navigation.push("CardScreen")} />
-            <PostCard />
-            <PostCard />
+            {rentalData.map((item) => {
+              console.log(item);
+              return (
+                <PostCard
+                  data={item}
+                  press={() => navigation.push("CardScreen", { data: item })}
+                />
+              );
+            })}
           </View>
         </ScrollView>
       </View>
