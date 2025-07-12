@@ -16,6 +16,7 @@ import "react-native-get-random-values";
 import Feather from "react-native-vector-icons/Feather";
 import GoogleAuto from "./GoogleAuto";
 import { GOOGLE_PLACES_API_KEY } from "@env";
+import rentalData from "../../assets/Database";
 
 const SearchScreen = () => {
   const [location, setLocation] = useState({
@@ -69,7 +70,6 @@ const SearchScreen = () => {
     } catch {
       console.log("Error in handleMarkerplacement:", error);
     }
-
   };
 
   useEffect(() => {
@@ -120,6 +120,31 @@ const SearchScreen = () => {
             }}
             pinColor="black"
           ></Marker>
+
+          {rentalData.map((item) => {
+            
+            return (
+              <Marker
+                coordinate={{
+                  latitude: item.coord.lat,
+                  longitude: item.coord.lng,
+                }}
+                pinColor="black"
+              >
+                <View
+                  style={{
+                    backgroundColor: "red",
+                    padding: 6,
+                    borderRadius: 20,
+                    borderColor: "white",
+                    borderWidth: 2,
+                  }}
+                >
+                  <Text style={{ color: "white", fontSize: 10 }}>R{item.price}</Text>
+                </View>
+              </Marker>
+            );
+          })}
         </MapView>
       </View>
     </SafeAreaView>
