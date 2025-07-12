@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import { View, TextInput, FlatList, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
-import styles from './styles';
-import {GOOGLE_PLACES_API_KEY} from '@env';
-
+import React, { useState, Keyboard } from "react";
+import {
+  View,
+  TextInput,
+  FlatList,
+  Text,
+  TouchableOpacity,
+  ActivityIndicator,
+} from "react-native";
+import styles from "./styles";
+import { GOOGLE_PLACES_API_KEY } from "@env";
 
 const GoogleAuto = ({ onPlaceSelect }) => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [suggestion, setSuggestion] = useState(false);
@@ -25,18 +31,21 @@ const GoogleAuto = ({ onPlaceSelect }) => {
       const data = await response.json();
       setResults(data.predictions || []);
     } catch (error) {
-      console.log('Places API error:', error);
+      console.log("Places API error:", error);
     } finally {
       setLoading(false);
     }
   };
 
-
   return (
     <View style={styles.searchHandler}>
       <TextInput
-        onFocus={()=>{ setSuggestion(true)}}
-        onBlur={()=>{ setSuggestion(false)}}
+        onFocus={() => {
+          setSuggestion(true);
+        }}
+        onBlur={() => {
+          setTimeout(() => setSuggestion(false), 200);
+        }}
         value={input}
         onChangeText={handleSearch}
         placeholder="Search places"
@@ -44,26 +53,24 @@ const GoogleAuto = ({ onPlaceSelect }) => {
       />
       {loading && <ActivityIndicator style={{ marginTop: 10 }} />}
       {suggestion && input.length >= 2 && results.length > 0 && (
-  <FlatList
-    keyboardShouldPersistTaps="handled"
-    data={results}
-    keyExtractor={(item) => item.place_id}
-    renderItem={({ item }) => (
-      <TouchableOpacity
-        onPress={() => {
-          setInput(item.description);
-          console.log("mazi: ", item)
-          setResults([]);
-          onPlaceSelect(item);
-        }}
-        style={{ paddingVertical: 10, padding:20, backgroundColor:'red',}}
-      >
-        <Text>{item.description}</Text>
-      </TouchableOpacity>
-    )}
-  />
-)}
-
+        <FlatList
+          keyboardShouldPersistTaps="handled"
+          data={results}
+          keyExtractor={(item) => item.place_id}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() => {
+                setInput(item.description);
+                setResults([]);
+                onPlaceSelect(item);
+              }}
+              style={styles.inputContainer}
+            >
+              <Text>{item.description}</Text>
+            </TouchableOpacity>
+          )}
+        />
+      )}
     </View>
   );
 };
